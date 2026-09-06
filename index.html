@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1720" />
+  <title>UNA VITA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main id="app" class="app-shell">
+    <section id="start-screen" class="screen active">
+      <div class="hero-mark">UNA VITA</div>
+      <h1>Non puoi tornare indietro.<br>Puoi solo scegliere.</h1>
+      <p class="lead">Un gioco narrativo sulle conseguenze, i legami e le scelte che diventano una vita.</p>
+      <button id="start-btn" class="primary">Inizia una nuova vita</button>
+      <button id="continue-btn" class="ghost hidden">Continua la tua vita</button>
+      <p class="small-note">La partita viene salvata sul dispositivo.</p>
+    </section>
+
+    <section id="game-screen" class="screen">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">Età</span>
+          <strong id="age-label">5 anni</strong>
+        </div>
+        <div class="chapter-wrap">
+          <span class="eyebrow">Capitolo</span>
+          <strong id="chapter-label">Infanzia</strong>
+        </div>
+      </header>
+
+      <div class="life-line" aria-label="Linea della vita">
+        <div id="life-progress" class="life-progress"></div>
+      </div>
+
+      <article class="story-card">
+        <p id="context-label" class="context-label"></p>
+        <h2 id="event-title"></h2>
+        <p id="event-text" class="event-text"></p>
+        <div id="choices" class="choices"></div>
+      </article>
+
+      <aside id="echo" class="echo hidden"></aside>
+    </section>
+
+    <section id="end-screen" class="screen">
+      <p class="eyebrow">La tua vita si è conclusa</p>
+      <h1 id="end-name">UNA VITA</h1>
+      <p id="end-years" class="lead"></p>
+      <div id="epitaph" class="epitaph"></div>
+      <button id="restart-btn" class="primary">Rivivi la tua vita</button>
+    </section>
+  </main>
+
+  <script src="events.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
