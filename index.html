@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0f1720" />
+  <meta name="theme-color" content="#0b1118" />
   <title>UNA VITA</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,10 +13,10 @@
     <section id="start-screen" class="screen active">
       <div class="hero-mark">UNA VITA</div>
       <h1>Non puoi tornare indietro.<br>Puoi solo scegliere.</h1>
-      <p class="lead">Un gioco narrativo sulle conseguenze, i legami e le scelte che diventano una vita.</p>
+      <p class="lead">Una simulazione narrativa in cui ogni scelta modifica relazioni, opportunità e il modo in cui affronti il resto della tua vita.</p>
       <button id="start-btn" class="primary">Inizia una nuova vita</button>
       <button id="continue-btn" class="ghost hidden">Continua la tua vita</button>
-      <p class="small-note">La partita viene salvata sul dispositivo.</p>
+      <p class="small-note">Le conseguenze non sono sempre immediate. La partita viene salvata sul dispositivo.</p>
     </section>
 
     <section id="game-screen" class="screen">
@@ -31,11 +31,16 @@
         </div>
       </header>
 
-      <div class="life-line" aria-label="Linea della vita">
-        <div id="life-progress" class="life-progress"></div>
+      <div class="life-line" aria-label="Linea della vita"><div id="life-progress" class="life-progress"></div></div>
+
+      <div class="status-row" aria-label="Situazione attuale">
+        <div class="status-pill"><span>Legami</span><strong id="bond-status">Stabili</strong></div>
+        <div class="status-pill"><span>Equilibrio</span><strong id="mind-status">Sereno</strong></div>
+        <div class="status-pill"><span>Situazione</span><strong id="life-status">Normale</strong></div>
       </div>
 
       <article class="story-card">
+        <div id="memory-note" class="memory-note hidden"></div>
         <p id="context-label" class="context-label"></p>
         <h2 id="event-title"></h2>
         <p id="event-text" class="event-text"></p>
@@ -43,12 +48,22 @@
       </article>
 
       <aside id="echo" class="echo hidden"></aside>
+      <button id="history-btn" class="timeline-btn">La mia storia</button>
     </section>
 
-    <section id="end-screen" class="screen">
+    <section id="history-screen" class="screen history-screen">
+      <div class="history-head">
+        <button id="history-back" class="ghost compact">← Torna alla vita</button>
+        <div><span class="eyebrow">Memoria</span><h2>La tua storia</h2></div>
+      </div>
+      <div id="history-list" class="history-list"></div>
+    </section>
+
+    <section id="end-screen" class="screen end-screen">
       <p class="eyebrow">La tua vita si è conclusa</p>
       <h1 id="end-name">UNA VITA</h1>
       <p id="end-years" class="lead"></p>
+      <div id="life-summary" class="life-summary"></div>
       <div id="epitaph" class="epitaph"></div>
       <button id="restart-btn" class="primary">Rivivi la tua vita</button>
     </section>
